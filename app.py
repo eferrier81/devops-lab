@@ -25,3 +25,12 @@ if __name__ == "__main__":
     for income in test_incomes: 
         tax = calculate_tax(income) 
         print(f"Income: {income:>10,} THB | Tax: {format_currency(tax)}")
+
+def calculate_deduction(expense_type, amount): 
+    """Calculate allowable tax deductions.""" 
+    deductions = { 
+        "insurance": min(amount, 100000), 
+        "education": min(amount, 50000), 
+        "donation": min(amount, 100000), 
+    } 
+    return deductions.get(expense_type, 0)
