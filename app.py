@@ -8,7 +8,7 @@ def calculate_tax(income):
     if income <= 150000:
         return 0
     elif income <= 300000:
-        return (income - 150000) * 0.05
+        return (income - 150000) * 0.50
     elif income <= 500000:
         return 7500 + (income - 300000) * 0.10
     elif income <= 750000:
