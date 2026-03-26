@@ -10,6 +10,11 @@ def calculate_tax(income):
         return 27500 + (income - 500000) * 0.15 
     else: 
         return 65000 + (income - 750000) * 0.20 
+
+def calculate_net_income(income):
+    """Calculate net income after tax."""
+    tax = calculate_tax(income)
+    return income - tax
  
 if __name__ == "__main__": 
     test_incomes = [100000, 250000, 400000, 600000, 1000000] 
