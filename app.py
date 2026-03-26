@@ -26,3 +26,12 @@ if __name__ == "__main__":
         tax = calculate_tax(income) 
         net = calculate_net_income(income)
         print(f"Income: {format_currency(income)} | Tax: {format_currency(tax)} | Net: {format_currency(net)}")
+
+def calculate_deduction(expense_type, amount): 
+    """Calculate allowable tax deductions.""" 
+    deductions = { 
+        "insurance": min(amount, 100000), 
+        "education": min(amount, 50000), 
+        "donation": min(amount, 100000), 
+    } 
+    return deductions.get(expense_type, 0)
